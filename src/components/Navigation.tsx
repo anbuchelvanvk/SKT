@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import logoImage from '../../public/logo.png';
 import styles from './Navigation.module.css';
-
 export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Navigation() {
     <header className={styles.header}>
       <div className={`container ${styles.navContainer}`}>
         <Link href="/" className={styles.logo}>
-          <img src="/logo.png" alt="SKT Group Logo" style={{ height: '60px', objectFit: 'contain' }} />
+          <Image src={logoImage} alt="SKT Group Logo" height={60} style={{ objectFit: 'contain', width: 'auto' }} />
         </Link>
 
         {/* Desktop Nav */}
